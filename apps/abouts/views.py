@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
 
 from apps.abouts.models import About
 
 
+@permission_required("Abouts watching")
 def about(request):
     """
     this about function
